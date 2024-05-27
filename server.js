@@ -3,6 +3,8 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const userRoute = require("./routes/users.js");
+const authRoute = require("./routes/auth.js");
 
 const app = express();
 dotenv.config();
@@ -20,6 +22,10 @@ mongoose
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+
+//routes
+app.use("/api/users", userRoute);
+app.use("/api/auth", authRoute);
 
 app.listen(8800, () => {
   console.log("backend server is Ready @ http://localhost:8800");
