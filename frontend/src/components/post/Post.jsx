@@ -1,5 +1,5 @@
-import "./post.css";
-import { MoreVert } from "@material-ui/icons";
+import "./Post.css";
+import { MoreVert } from "@mui/icons-material";
 import { Users } from "../../dummyData";
 import { useState } from "react";
 
@@ -11,6 +11,7 @@ export default function Post({ post }) {
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
   };
+
   return (
     <div className="post">
       <div className="postWrapper">
